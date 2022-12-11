@@ -1,14 +1,23 @@
 #include <iostream>
-#include <string>
-
+#include <cstring>
 using namespace std;
 
 int main()
 {
     //uzmi straincu
-    string site;
-    cout << "Enter Desired site: " << endl;
-    cin >> site;
+     std::string site;
+
+  std::cout << "Please, enter your full name: ";
+  std::getline (std::cin,site);
+  //std::cout << "Hello, " << site << "!\n";
+
+    for (int i = 0; i < site.length(); ++i) {
+      // replacing character to '-' with a 'space'.
+      if (site[i] == ' ') {
+         site[i] = '-';
+      }
+   }
+
     //pripremi string za link
     string baseUrl;
     //uzmi prva dva slova i stavi ih u strinh
@@ -17,9 +26,10 @@ int main()
     char c = ':';
 
     //base url će ovisiti o commani
-    baseUrl = "https://www.facebook.com/";
+    baseUrl = "https://www.google.com/search?client=CMDSearch&q=";
+    string Final = baseUrl + site;
 
-    cout << baseUrl << endl << first_two << endl;
+    cout << Final << endl;
 
     //provjeri dali upis ima onaj preodređeni znak
     if (site.find(c) != std::string::npos)
