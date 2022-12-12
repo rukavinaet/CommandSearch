@@ -3,3 +3,5 @@
 * GH - Github
 * LD - LinkedIN
 * SO - StackOverflow
+
+...more will be added in the upcoming versions :)
