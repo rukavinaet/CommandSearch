@@ -1,2 +1,2 @@
-I am still building it....
-[hii](test.md)
+<p style="text-align: center;">This is a text</p>
+[test](test.md)
