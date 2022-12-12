@@ -7,8 +7,14 @@ int main()
     //uzmi straincu
      std::string site;
 
-  std::cout << "Please, enter your full name: ";
+  std::cout << "## CommandSearch 0.1 ##\nFor settings type 'settings'.\nSource code is avaliable at https://github.com/rukavinaet/CommandSearch\n\n ";
   std::getline (std::cin,site);
+  if(site == "settings"){
+      std::cout << "These are seetiings";
+  }
+  else{
+    
+  }
   //std::cout << "Hello, " << site << "!\n";
 
     for (int i = 0; i < site.length(); ++i) {
