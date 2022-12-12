@@ -2,63 +2,56 @@
 #include <cstring>
 using namespace std;
 
+//globalne stvari
 void myFunction();
-std::string baseUrl; 
+std::string baseUrl;
 
 int main()
 {
+    //očisti sustav i pripremi "site"- unos korisnika
     system("cls");
-    // uzmi straincu
     std::string site;
 
-    std::cout << "## CommandSearch 0.1 ##\nSource code is avaliable at https://github.com/rukavinaet/CommandSearch\n\n ";
+    std::cout << "## CommandSearch 0.1 ##\nMore information is avaliable at https://rukavinaet.github.io/CommandSearch\n\n ";
     std::getline(std::cin, site);
     if (site == "options")
     {
-        std::cout << "These are options and they are coming soon.\n\n";
-        
+        std::cout << "These are options and they are coming soon.\nReturning back...\n";
         main();
     }
     else
     {
+        //sve razmake zamijeni sa crticom
         for (int i = 0; i < site.length(); ++i)
         {
-            // replacing character to '-' with a 'space'.
             if (site[i] == ' ')
             {
                 site[i] = '-';
             }
         }
 
-        // pripremi string za link
-        // uzmi prva dva slova i stavi ih u strinh
-        
-        // mogući znakovi
         char c = ':';
-
-        // base url će ovisiti o commani
-        // string baseUrl = "https://www.google.com/search?client=https://rukavinaet.github.io/CommandSearch&q=";
-        // string Final =  baseUrl + site;
-
-        // cout << Final << endl;
-
-        // provjeri dali upis ima onaj preodređeni znak
+        //ovo će se koristit kada bude multiple statements
+        char d= '+';
+        //ako ima dvotočku onda radi ovo
         if (site.find(c) != std::string::npos)
         {
             string first_two = site.substr(0, 2);
-            site.erase(0,3);
-            if (first_two == "GH")
+            site.erase(0, 3);
+            if (first_two == "GH"){baseUrl = "https://github.com/search?q=" + site;}
+            else if (first_two == "LD"){baseUrl = "https://www.linkedin.com/search/results/all/?keywords=" + site;}
+            else if (first_two == "SO"){baseUrl = "https://stackoverflow.com/search?q=" + site;}
+            else
             {
-                baseUrl = "https://github.com/search?q=" + site;
+                baseUrl = "https://www.google.com/search?q=" + site;
             }
-            myFunction(); // call the function
+            myFunction();
 
-            // system(std::string("start " + baseUrl).c_str());
             return 0;
         }
         else
         {
-            baseUrl = "https://www.google.com/search?q="+ site;
+            baseUrl = "https://www.google.com/search?q=" + site;
             myFunction();
         }
     }
