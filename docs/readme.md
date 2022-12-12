@@ -1,1 +1,1 @@
-## This is a website for the project
+<p style="text-align: center;">This is a text</p>
