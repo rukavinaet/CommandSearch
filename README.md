@@ -8,10 +8,10 @@ A windows cmd tool for faster searching of the web.
   
 ## Usage
 * GOOGLE SEARCH<br>
-  Typing anzthing will open up a google search with your query<br><br>
+  Typing anything will open up a google search with your query<br><br>
 
 * SITE SPECIFIC<br>
-  Typing a site code before your string with open up a website correlating with that site code;
+  Typing a site code before your string with open up a website correlating with that site code;<br>
   <code>GH:rukavinaet</code> --> https://github.com/search?q=rukavinaet<br><br>
   You can find all site codes [here](sites.md)
 ## Author
