@@ -1,6 +1,8 @@
 
 # Command Search
 A windows cmd tool for faster searching of the web.
+
+I AM NO LONGER WORKING ON THIS!
 <hr>
 
 ## Features
