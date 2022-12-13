@@ -13,26 +13,19 @@ std::string ProjectWeb;
 
 int main()
 {
-    // očisti sustav i pripremi "site"- unos korisnika
+    // očisti sustav i pripremi "second"- unos korisnika
     system("cls");
     std::cout << "## CommandSearch 0.1 ##\nMore information is avaliable at https://rukavinaet.github.io/CommandSearch\nFor help type 'help'\n\n ";
     std::string first, second;
-    char delimeter('-'); // It is always '-' is it?
+    char delimeter(':'); // It is always '-' is it?
     std::getline(std::cin, first, delimeter);
     std::getline(std::cin, second);
-    if (site == "")
-    {
-        system("cls");
-        main();
-    }
-    else
-    {
-        if (site == "options")
+        if (second == "options")
         {
             std::cout << "These are options and they are coming soon.\nReturning back...\n";
-            main();
+            system("pause");
         }
-        else if (site == "help")
+        else if (second == "help")
         {
             system("cls");
             help();
@@ -41,50 +34,37 @@ int main()
         {
 
             // sve razmake zamijeni sa crticom
-            for (int i = 0; i < site.length(); ++i)
+            for (int i = 0; i < second.length(); ++i)
             {
-                if (site[i] == ' ')
+                if (second[i] == ' ')
                 {
-                    site[i] = '-';
+                    second[i] = '+';
                 }
             }
-
-            char c = ':';
-            // ovo će se koristit kada bude multiple statements
-            char d = '+';
-            // ako ima dvotočku onda radi ovo
-            if (site.find(c) != std::string::npos)
-            {
-                string first_two = site.substr(0, 2);
-                site.erase(0, 3);
-                if (first_two == "GH")
+                if (first == "GH")
                 {
-                    baseUrl = "https://github.com/search?q=" + site;
+                    baseUrl = "https://github.com/search?q=" + second;
                 }
-                else if (first_two == "LD")
+                else if (first == "LD")
                 {
-                    baseUrl = "https://www.linkedin.com/search/results/all/?keywords=" + site;
+                    baseUrl = "https://www.linkedin.com/search/results/all/?keywords=" + second;
                 }
-                else if (first_two == "SO")
+                else if (first == "SO")
                 {
-                    baseUrl = "https://stackoverflow.com/search?q=" + site;
+                    baseUrl = "https://stackoverflow.com/search?q=" + second;
                 }
                 else
                 {
-                    baseUrl = "https://www.google.com/search?q=" + site;
+                    baseUrl = "https://www.google.com/search?q=" + second;
                 }
                 GoWeb();
 
                 return 0;
             }
-            else
-            {
-                baseUrl = "https://www.google.com/search?q=" + site;
-                GoWeb();
-            }
+          
         }
-    }
-}
+    
+
 void GoWeb()
 {
     system(std::string("start " + baseUrl).c_str());
@@ -92,7 +72,7 @@ void GoWeb()
 void help()
 {
     int n;
-    std::cout << "## CommandSearch 0.1 ##\nCommands:\nGH - GitHub\nSO - StackOverflow\nLD - LinkedIN\n\nAttention: This is an alpha software, bugs are not welcome, but expected\nType '1' to return back or type '2' to go to the project website.\n\n";
+    std::cout << "## CommandSearch 0.1 ##\nCommands:\nGH - GitHub\nSO - StackOverflow\nLD - LinkedIN\n\nAttention: This is an alpha software, bugs are not welcome, but expected\nType '1' to return back or type '2' to go to the project websecond.\n\n";
     std::cin >> n;
     if (n == 1)
     {
