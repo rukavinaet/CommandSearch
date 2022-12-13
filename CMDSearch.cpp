@@ -2,6 +2,9 @@
 #include <cstring>
 using namespace std;
 
+
+//dev branch za .2v
+
 // globalne stvari
 void GoWeb();
 void help();
